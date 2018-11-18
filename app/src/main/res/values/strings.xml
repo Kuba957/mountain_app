@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MountainApp</string>
+    <string name="map">Mapa</string>
+    <string name="trail">Szlaki</string>
+    <string name="POI">Miejsca</string>
+    <string name="shelter">Schroniska</string>
+    <string name="weather">Pogoda</string>
+    <string name="info">Wiedza</string>
+
+    <string name="access_token">pk.eyJ1Ijoia3ViYWFhc3MiLCJhIjoiY2pvbGFjdHl3MDdxZTNwa2t2M2kyaGZtcCJ9._zLhrerhB6YjW4v_Mu-gog</string>
+
+    <string name="user_location_permission_not_granted">Proszę zezwolic na usługę lokalizacji</string>
+</resources>
