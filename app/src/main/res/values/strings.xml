@@ -10,4 +10,16 @@
     <string name="access_token">pk.eyJ1Ijoia3ViYWFhc3MiLCJhIjoiY2pvbGFjdHl3MDdxZTNwa2t2M2kyaGZtcCJ9._zLhrerhB6YjW4v_Mu-gog</string>
 
     <string name="user_location_permission_not_granted">Proszę zezwolic na usługę lokalizacji</string>
+
+    <string name="temperature">Temperatura</string>
+    <string name="condition">Warunki</string>
+    <string name="location">Lokalizacja</string>
+    <string name="temperature_output">%1$d&#176;%2$s</string>
+    <string name="condition_icon">Condition Icon</string>
+    <string name="date">Data</string>
+    <string name="sunrise">Wschód</string>
+    <string name="sunset">Zachód</string>
+    <string name="wind">Wiatr</string>
+    <string name="humidity">Wilgotnosc</string>
+    <string name="yahoo">Powered by Yahoo!</string>
 </resources>

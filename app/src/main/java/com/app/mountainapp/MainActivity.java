@@ -19,7 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onActivityChange(View view){
-        Intent intent = new Intent(this,MapActivity.class);
-        startActivity(intent);
+        int choose = view.getId();
+        Intent intent;
+        switch(choose){
+            case R.id.map:
+                intent = new Intent(this,MapActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.weather:
+                intent = new Intent(this,WeatherActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 }
