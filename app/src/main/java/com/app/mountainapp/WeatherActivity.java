@@ -9,12 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.mountainapp.data.Astronomy;
-import com.app.mountainapp.data.Atmosphere;
-import com.app.mountainapp.data.Channel;
-import com.app.mountainapp.data.Condition;
-import com.app.mountainapp.data.Units;
-import com.app.mountainapp.data.Wind;
+import com.app.mountainapp.weather_data.Astronomy;
+import com.app.mountainapp.weather_data.Atmosphere;
+import com.app.mountainapp.weather_data.Channel;
+import com.app.mountainapp.weather_data.Condition;
+import com.app.mountainapp.weather_data.Units;
+import com.app.mountainapp.weather_data.Wind;
 import com.app.mountainapp.service.WeatherServiceCallback;
 import com.app.mountainapp.service.YahooWeatherService;
 

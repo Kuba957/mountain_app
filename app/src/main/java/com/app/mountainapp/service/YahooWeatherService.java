@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.AsyncTask;
 
-import com.app.mountainapp.data.Channel;
+import com.app.mountainapp.weather_data.Channel;
 
 import org.json.JSONException;
 import org.json.JSONObject;

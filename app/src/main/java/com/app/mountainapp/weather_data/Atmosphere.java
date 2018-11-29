@@ -1,4 +1,4 @@
-package com.app.mountainapp.data;
+package com.app.mountainapp.weather_data;
 
 import org.json.JSONObject;
 

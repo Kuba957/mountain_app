@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this,WeatherActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.shelter:
+                intent = new Intent(this,ShelterActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }
