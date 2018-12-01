@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-
+    <include layout="@layout/toolbar"/>
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
@@ -17,6 +17,6 @@
         mapbox:mapbox_styleUrl="mapbox://styles/kubaaass/cjolcahpz1e2g2smq3u9wm526"
         mapbox:mapbox_cameraZoom="11"/>
 
-    <include layout="@layout/toolbar"/>
+
 
 </android.support.constraint.ConstraintLayout>

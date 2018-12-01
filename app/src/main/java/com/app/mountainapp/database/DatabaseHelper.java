@@ -10,8 +10,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -78,29 +76,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<Shelter> getAllShelters(){
-        List<Shelter> temp = new ArrayList<Shelter>();
+    public Cursor viewName(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c;
-        try{
-            c = db.rawQuery("SELECT shelter_name,phone_number FROM Shelter",null);
-            if(c == null){
-                return null;
-            }
-
-            c.moveToFirst();
-            do{
-                Shelter shelter = new Shelter(c.getString(c.getColumnIndex("shelter_name")),
-                        c.getString(c.getColumnIndex("phone_number")));
-                temp.add(shelter);
-            }while(c.moveToNext());
-            c.close();
-        }
-        catch(Exception e){
-
-        }
-        db.close();
-        return temp;
+        String query = "SELECT shelter_name,image FROM Shelter";
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor;
     }
 
     @Override

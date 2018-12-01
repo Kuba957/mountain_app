@@ -1,17 +1,19 @@
 package com.app.mountainapp.database;
 
+import android.graphics.Bitmap;
+
 public class Shelter {
 
     private String shelter_name;
-    private String phone_number;
+    private Bitmap shelter_image;
 
     public Shelter(){
 
     }
 
-    public Shelter(String shelter_name, String phone_number) {
+    public Shelter(String shelter_name,Bitmap shelter_image) {
         this.shelter_name = shelter_name;
-        this.phone_number = phone_number;
+        this.shelter_image = shelter_image;
     }
 
     public String getShelter_name() {
@@ -22,11 +24,11 @@ public class Shelter {
         this.shelter_name = shelter_name;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public Bitmap getShelter_image() {
+        return shelter_image;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setShelter_image(Bitmap shelter_image) {
+        this.shelter_image = shelter_image;
     }
 }
