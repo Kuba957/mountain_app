@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor viewName(){
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT shelter_name,image FROM Shelter";
+        String query = "SELECT shelter_name,image,phone_number FROM Shelter";
         Cursor cursor = db.rawQuery(query, null);
         return cursor;
     }

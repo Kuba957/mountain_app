@@ -35,6 +35,19 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
     public void onBindViewHolder(@NonNull final DataObjectHolder dataObjectHolder, int position) {
         dataObjectHolder.shelter_name.setText(list_shelter.get(position).getShelter_name());
         Glide.with(context).load(list_shelter.get(position).getShelter_image()).into(dataObjectHolder.shelter_image);
+        dataObjectHolder.shelter_phone.setText(list_shelter.get(position).getPhoneNumber());
+        Shelter shelter = list_shelter.get(position);
+        dataObjectHolder.bind(shelter);
+
+        dataObjectHolder.shelter_image.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                boolean expanded = shelter.isExpanded();
+                shelter.setExpanded(!expanded);
+                notifyItemChanged(position);
+            }
+        });
     }
 
     @Override
@@ -45,11 +58,20 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
     public class DataObjectHolder extends RecyclerView.ViewHolder{
         private TextView shelter_name;
         private ImageView shelter_image;
+        private TextView shelter_phone;
+        private View shelter_detail;
 
         public DataObjectHolder(@NonNull View itemView) {
             super(itemView);
             this.shelter_name = itemView.findViewById(R.id.shelter_name);
             this.shelter_image = itemView.findViewById(R.id.shelter_image);
+            this.shelter_phone = itemView.findViewById(R.id.shelter_detail_phone);
+            this.shelter_detail = itemView.findViewById(R.id.shelter_detail);
+        }
+
+        private void bind(Shelter shelter){
+            boolean expanded = shelter.isExpanded();
+            shelter_detail.setVisibility(expanded ? View.VISIBLE : View.GONE);
         }
     }
 }

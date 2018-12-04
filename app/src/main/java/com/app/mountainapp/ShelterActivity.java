@@ -58,8 +58,9 @@ public class ShelterActivity extends AppCompatActivity {
             while(cursor.moveToNext()){
                 String name = cursor.getString(0);
                 byte[] image = cursor.getBlob(1);
+                String phone = cursor.getString(2);
                 bt = BitmapFactory.decodeByteArray(image,0,image.length);
-                Shelter shelter = new Shelter(name,bt);
+                Shelter shelter = new Shelter(name,bt,phone);
                 listName.add(shelter);
             }
             cursor.close();
