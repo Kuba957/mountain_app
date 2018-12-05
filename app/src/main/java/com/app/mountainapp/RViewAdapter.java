@@ -36,6 +36,16 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
         dataObjectHolder.shelter_name.setText(list_shelter.get(position).getShelter_name());
         Glide.with(context).load(list_shelter.get(position).getShelter_image()).into(dataObjectHolder.shelter_image);
         dataObjectHolder.shelter_phone.setText(list_shelter.get(position).getPhoneNumber());
+        dataObjectHolder.shelter_email.setText(list_shelter.get(position).geteMail());
+        dataObjectHolder.shelter_place.setText(String.valueOf(list_shelter.get(position).getPlaceNumber()));
+        dataObjectHolder.shelter_height.setText(String.valueOf(list_shelter.get(position).getHeightASL()));
+        dataObjectHolder.shelter_webpage.setText(list_shelter.get(position).getWebpage());
+        if(!list_shelter.get(position).isCardPayment()){
+            dataObjectHolder.shelter_card.setImageResource(R.drawable.ic_cross);
+        }
+        else{
+            dataObjectHolder.shelter_card.setImageResource(R.drawable.ic_check);
+        }
         Shelter shelter = list_shelter.get(position);
         dataObjectHolder.bind(shelter);
 
@@ -60,6 +70,11 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
         private ImageView shelter_image;
         private TextView shelter_phone;
         private View shelter_detail;
+        private TextView shelter_email;
+        private TextView shelter_place;
+        private TextView shelter_height;
+        private TextView shelter_webpage;
+        private ImageView shelter_card;
 
         public DataObjectHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,11 +82,17 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
             this.shelter_image = itemView.findViewById(R.id.shelter_image);
             this.shelter_phone = itemView.findViewById(R.id.shelter_detail_phone);
             this.shelter_detail = itemView.findViewById(R.id.shelter_detail);
+            this.shelter_email = itemView.findViewById(R.id.shelter_detail_email);
+            this.shelter_place = itemView.findViewById(R.id.shelter_detail_place);
+            this.shelter_height = itemView.findViewById(R.id.shelter_detail_height);
+            this.shelter_webpage = itemView.findViewById(R.id.shelter_detail_webpage);
+            this.shelter_card = itemView.findViewById(R.id.shelter_detail_card);
         }
 
         private void bind(Shelter shelter){
             boolean expanded = shelter.isExpanded();
             shelter_detail.setVisibility(expanded ? View.VISIBLE : View.GONE);
+
         }
     }
 }

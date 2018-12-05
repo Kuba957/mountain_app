@@ -40,13 +40,13 @@ public class ShelterActivity extends AppCompatActivity {
         this.recyclerView = findViewById(R.id.recycler_view);
         this.layoutManager = new LinearLayoutManager(getBaseContext());
         recyclerView.setLayoutManager(layoutManager);
-        this.adapter = new RViewAdapter(getBaseContext(),getShelterName());
+        this.adapter = new RViewAdapter(getBaseContext(),getShelterData());
         recyclerView.setAdapter(adapter);
 
 
     }
 
-    private ArrayList<Shelter> getShelterName() {
+    private ArrayList<Shelter> getShelterData() {
         ArrayList<Shelter> listName = new ArrayList<Shelter>();
         Bitmap bt = null;
         Cursor cursor = db.viewName();
@@ -56,11 +56,17 @@ public class ShelterActivity extends AppCompatActivity {
         }
         else{
             while(cursor.moveToNext()){
-                String name = cursor.getString(0);
-                byte[] image = cursor.getBlob(1);
+                String name = cursor.getString(1);
                 String phone = cursor.getString(2);
+                String email = cursor.getString(3);
+                int placeNumber = cursor.getInt(4);
+                boolean cardPayment = cursor.getInt(5) > 0;
+                int heightASL = cursor.getInt(6);
+                String webpage = cursor.getString(7);
+                byte[] image = cursor.getBlob(8);
                 bt = BitmapFactory.decodeByteArray(image,0,image.length);
-                Shelter shelter = new Shelter(name,bt,phone);
+                Shelter shelter = new Shelter(name,bt,phone,email,placeNumber,cardPayment,heightASL,
+                        webpage);
                 listName.add(shelter);
             }
             cursor.close();

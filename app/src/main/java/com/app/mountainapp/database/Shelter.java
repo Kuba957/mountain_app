@@ -19,10 +19,16 @@ public class Shelter {
 
     }
 
-    public Shelter(String shelter_name, Bitmap shelter_image, String phoneNumber) {
+    public Shelter(String shelter_name, Bitmap shelter_image, String phoneNumber, String eMail,
+                   int placeNumber, boolean cardPayment, int heightASL, String webpage) {
         this.shelter_name = shelter_name;
         this.shelter_image = shelter_image;
         this.phoneNumber = phoneNumber;
+        this.eMail = eMail;
+        this.placeNumber = placeNumber;
+        this.cardPayment = cardPayment;
+        this.heightASL = heightASL;
+        this.webpage = webpage;
     }
 
     public String getShelter_name() {
