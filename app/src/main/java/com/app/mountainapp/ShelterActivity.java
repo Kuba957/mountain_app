@@ -1,14 +1,18 @@
 package com.app.mountainapp;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.mountainapp.database.DatabaseHelper;
@@ -79,4 +83,34 @@ public class ShelterActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+    public void openEmail(View view){
+        TextView textView = view.findViewById(R.id.shelter_detail_email);
+        String mailTo = textView.getText().toString();
+        if(mailTo != ""){
+            Intent mailIntent = new Intent(Intent.ACTION_SENDTO);
+            mailIntent.setData(Uri.parse("mailto:"+mailTo));
+            startActivity(mailIntent);
+        }
+
+    }
+
+    public void openWeb(View view){
+        TextView textView = view.findViewById(R.id.shelter_detail_webpage);
+        String webpageAddress = textView.getText().toString();
+        if((!webpageAddress.startsWith("http://")) && (!webpageAddress.startsWith("https://"))){
+            webpageAddress = "http://"+webpageAddress;
+        }
+        Intent webIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(webpageAddress));
+        startActivity(webIntent);
+    }
+
+    public void makeCall(View view){
+        TextView textView = view.findViewById(R.id.shelter_detail_phone);
+        String phoneNumber = textView.getText().toString();
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+        phoneIntent.setData(Uri.parse("tel:"+phoneNumber));
+        startActivity(phoneIntent);
+    }
+
 }

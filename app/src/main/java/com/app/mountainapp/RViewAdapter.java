@@ -38,7 +38,7 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.DataObjectHo
         dataObjectHolder.shelter_phone.setText(list_shelter.get(position).getPhoneNumber());
         dataObjectHolder.shelter_email.setText(list_shelter.get(position).geteMail());
         dataObjectHolder.shelter_place.setText(String.valueOf(list_shelter.get(position).getPlaceNumber()));
-        dataObjectHolder.shelter_height.setText(String.valueOf(list_shelter.get(position).getHeightASL()));
+        dataObjectHolder.shelter_height.setText(String.valueOf(list_shelter.get(position).getHeightASL())+" m.n.p.m");
         dataObjectHolder.shelter_webpage.setText(list_shelter.get(position).getWebpage());
         if(!list_shelter.get(position).isCardPayment()){
             dataObjectHolder.shelter_card.setImageResource(R.drawable.ic_cross);

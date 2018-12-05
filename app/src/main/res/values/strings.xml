@@ -32,7 +32,7 @@
     <string name="place_number_txt">10</string>
     <string name="card_payment">Płatność kartą</string>
     <string name="height">Wysokość</string>
-    <string name="height_txt">1000 m.n.p.m</string>
+    <string name="height_txt">%1$s m.n.p.m</string>
     <string name="webpage">Strona internetowa</string>
     <string name="webpage_txt">www.shelter.com</string>
 </resources>
