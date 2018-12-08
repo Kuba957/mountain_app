@@ -35,4 +35,14 @@
     <string name="height_txt">%1$s m.n.p.m</string>
     <string name="webpage">Strona internetowa</string>
     <string name="webpage_txt">www.shelter.com</string>
+    <string name="trail_condition_title">Warunki na szlakach</string>
+    <string name="title_date">Title and Date</string>
+    <string name="tourist_communicate_website">http://tpn.pl/zwiedzaj#komunikat-pogodowy</string>
+    <string name="threats_title">Zagrożenia</string>
+    <string name="advice_title">Zalecenia</string>
+    <string name="closed_trail_title">Zamknięcia szlaków pieszych</string>
+    <string name="additional_info_title">Informacje dodatkowe</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

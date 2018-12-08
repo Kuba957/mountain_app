@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this,ShelterActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.info:
+                intent = new Intent(this,InfoActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }

@@ -22,7 +22,8 @@
         <activity android:name=".MapActivity" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".ShelterActivity" />
-        <activity android:name=".ShelterDetailActivity"></activity>
+        <activity android:name=".ShelterDetailActivity" />
+        <activity android:name=".InfoActivity"></activity>
     </application>
 
 </manifest>
