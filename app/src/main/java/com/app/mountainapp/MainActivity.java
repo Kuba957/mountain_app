@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this,InfoActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.trail:
+                intent = new Intent(this,TrailActivity.class);
+                startActivity(intent);
+                break;
             case R.id.help:
                 Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
                 phoneIntent.setData(Uri.parse("tel:"+getResources().getString(R.string.emergency_phone)));

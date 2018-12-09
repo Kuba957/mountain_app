@@ -1,7 +1,8 @@
 package com.app.mountainapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 
 public class TrailActivity extends AppCompatActivity {
 
@@ -10,4 +11,5 @@ public class TrailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trail);
     }
+
 }

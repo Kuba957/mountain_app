@@ -49,7 +49,7 @@
     <string name="help">TOPR</string>
     <string name="avalanche_website">"http://lawiny.topr.pl/viewpdf"</string>
     <string name="avalanche">Komunikat Lawinowy</string>
-
+    <string name="navigationButton">Rozpocznij nawigację</string>
 
 
     <string-array name="info_list">
