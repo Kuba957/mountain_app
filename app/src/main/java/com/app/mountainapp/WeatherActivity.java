@@ -1,7 +1,6 @@
 package com.app.mountainapp;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,7 +20,7 @@ import com.app.mountainapp.service.YahooWeatherService;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class WeatherActivity extends AppCompatActivity implements WeatherServiceCallback {
+public class WeatherActivity extends BaseActivity implements WeatherServiceCallback {
 
     private ImageView weatherIcon;
     private TextView temperatureText;
@@ -66,12 +65,6 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
-
-    @Override
     public void serviceSuccess(Channel channel){
         dialog.hide();
         Condition condition = channel.getItem().getCondition();
@@ -112,4 +105,5 @@ public class WeatherActivity extends AppCompatActivity implements WeatherService
         TextView textView = (TextView) findViewById(R.id.date);
         textView.setText(num);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.app.mountainapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.info:
                 intent = new Intent(this,InfoActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.help:
+                Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+                phoneIntent.setData(Uri.parse("tel:"+getResources().getString(R.string.emergency_phone)));
+                startActivity(phoneIntent);
                 break;
         }
 

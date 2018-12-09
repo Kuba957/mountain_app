@@ -1,95 +1,50 @@
 package com.app.mountainapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import android.widget.TextView;
+public class InfoActivity extends BaseActivity {
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-
-public class InfoActivity extends AppCompatActivity {
-
-    TextView titleView;
-    TextView trailConditionView;
-    TextView threatsView;
-    TextView adviceView;
-    TextView closedTrailView;
-    TextView additionalInfoView;
+    private ListView listView ;
+    private ArrayAdapter<String> adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
-        titleView = (TextView)findViewById(R.id.info_title);
-        trailConditionView = (TextView)findViewById(R.id.trail_condition);
-        threatsView = (TextView)findViewById(R.id.threats);
-        adviceView = (TextView)findViewById(R.id.advice);
-        closedTrailView = (TextView)findViewById(R.id.closed_trail);
-        additionalInfoView = (TextView)findViewById(R.id.additional_info);
 
-        getWebsite();
-    }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.info);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-    private void getWebsite() {
-        new Thread(new Runnable() {
+        listView = (ListView)findViewById(R.id.list_info);
+
+        String[] info_titles = this.getResources().getStringArray(R.array.info_list);
+
+        adapter = new ArrayAdapter<String>(this, R.layout.info_card,R.id.text1,info_titles);
+
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void run() {
-                final StringBuilder title = new StringBuilder();
-                final StringBuilder trailCondition = new StringBuilder();
-                final StringBuilder threats = new StringBuilder();
-                final StringBuilder advice = new StringBuilder();
-                final StringBuilder closedTrail = new StringBuilder();
-                final StringBuilder additionalInfo = new StringBuilder();
-                int counter = 0;
-
-                try {
-                    Document doc = Jsoup.connect(getString(R.string.tourist_communicate_website)).get();
-                    Elements mainBody = doc.select("div.mceContentBody");
-                    title.append(mainBody.select("strong").first().text()).append("\n").append(
-                            mainBody.select("span").first().text()).append("\n");
-                    Elements mContent = mainBody.select("div.m-content");
-                    for(Element content : mContent){
-                        if(counter == 0){
-                            trailCondition.append("\n").append(content.text()).append("\n");
-                        }
-                        else if(counter == 2){
-                            threats.append("\n").append(content.text()).append("\n");
-                        }
-                        else if(counter == 3){
-                            advice.append("\n").append(content.text()).append("\n");
-                        }
-                        else if(counter == 4){
-                            closedTrail.append("\n").append(content.text()).append("\n");
-                        }
-                        else if(counter == 5){
-                            additionalInfo.append("\n").append(content.text());
-                        }
-                        counter++;
-                    }
-
-                } catch (IOException e) {
-                    title.append("Error : ").append(e.getMessage()).append("\n");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    Intent intent = new Intent(view.getContext(),ConditionActivity.class);
+                    startActivity(intent);
                 }
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        titleView.setText(title.toString());
-                        trailConditionView.setText(trailCondition);
-                        threatsView.setText(threats);
-                        adviceView.setText(advice);
-                        closedTrailView.setText(closedTrail);
-                        additionalInfoView.setText(additionalInfo);
-                    }
-                });
+                else if(position == 1){
+                    Intent intent = new Intent((view.getContext()),AvalancheActivity.class);
+                    startActivity(intent);
+                }
             }
-        }).start();
+        });
+
     }
-
-
 }

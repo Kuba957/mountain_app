@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +19,7 @@ import com.app.mountainapp.database.Shelter;
 
 import java.util.ArrayList;
 
-public class ShelterActivity extends AppCompatActivity {
+public class ShelterActivity extends BaseActivity {
 
     DatabaseHelper db;
     private RecyclerView recyclerView;
@@ -78,12 +77,6 @@ public class ShelterActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
-
     public void openEmail(View view){
         TextView textView = view.findViewById(R.id.shelter_detail_email);
         String mailTo = textView.getText().toString();
@@ -112,5 +105,4 @@ public class ShelterActivity extends AppCompatActivity {
         phoneIntent.setData(Uri.parse("tel:"+phoneNumber));
         startActivity(phoneIntent);
     }
-
 }
