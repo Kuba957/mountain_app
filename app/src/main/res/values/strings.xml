@@ -50,6 +50,8 @@
     <string name="avalanche_website">"http://lawiny.topr.pl/viewpdf"</string>
     <string name="avalanche">Komunikat Lawinowy</string>
     <string name="navigationButton">Rozpocznij nawigację</string>
+    <string name="trail_map">Schemat szlaków pieszych</string>
+    <string name="cycle_map">Schemat szlaków rowerowych</string>
 
 
     <string-array name="info_list">

@@ -81,7 +81,7 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback,
                 NavigationLauncherOptions options = NavigationLauncherOptions.builder()
                         .origin(originPosition)
                         .destination(destinationPosition)
-                        .shouldSimulateRoute(true)
+                        .shouldSimulateRoute(false)
                         .directionsProfile(DirectionsCriteria.PROFILE_WALKING)
                         .build();
                 NavigationLauncher.startNavigation(MapActivity.this,options);

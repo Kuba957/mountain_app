@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="bg">#5a000000</color>
+    <color name="bg_trail">#b3000000</color>
 </resources>
